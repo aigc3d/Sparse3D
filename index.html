@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Sparse3D">
+  <meta property="og:title" content="Sparse3D"/>
+  <meta property="og:description" content="High-Fidelity 3D Textured Shapes Generation by Sparse Encoding and Adversarial Decoding"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/video_t1.png" />
+  <meta property="og:image:width" content="2412"/>
+  <meta property="og:image:height" content="1394"/>
+
+
+  <meta name="twitter:title" content="Sparse3D">
+  <meta name="twitter:description" content="High-Fidelity 3D Textured Shapes Generation by Sparse Encoding and Adversarial Decoding">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/video_t1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="Image-to-Video">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Sparse3D</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href=https://github.com/aigc3d>
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            More Research
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://aigc3d.github.io/richdreamer">
+              Richdreamer
+            </a>
+            <a class="navbar-item" href="https://github.com/yushuang-wu/IPoD">
+              IPoD
+            </a>
+            <a class="navbar-item" href="https://aigc3d.github.io/gobjaverse/">
+              G-Objaverse
+            </a>
+            <a class="navbar-item" href="https://aigc3d.github.io/motionshop/">
+              MotionShop
+            </a>
+            <a class="navbar-item" href="https://aigc3d.github.io/VideoMV/">
+              VideoMV
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">High-Fidelity 3D Textured Shapes Generation by Sparse Encoding and Adversarial Decoding</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://www.semanticscholar.org/author/Qi-Zuo/2268491852" target="_blank">Qi Zuo<sup>1*</sup></a>,</span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com.hk/citations?user=aJPO514AAAAJ&hl=zh-CN&oi=ao" target="_blank">Xiaodong Gu<sup>1*</sup></a>,</span>
+                    <span class="author-block">
+                      <a href="dy283090@alibaba-inc.com" target="_blank">Yuan Dong<sup>1*</sup></a>,</span>
+                        <span class="author-block">
+                          <a href="bushe.zzy@alibaba-inc.com" target="_blank">Zhengyi Zhao<sup>1</sup></a>,</span>
+                            <span class="author-block">
+                              <a href="https://weihao-yuan.com/" target="_blank">Weihao Yuan<sup>1</sup></a>,</span>
+                                <span class="author-block">
+                                    <a href="https://lingtengqiu.github.io/" target="_blank">Lingteng Qiu<sup>1,2</sup></a>,</span>
+                                        <span class="author-block">
+                                        <a href="https://research.cs.washington.edu/istc/lfb/" target="_blank">Liefeng Bo<sup>1</sup></a>,</span>
+                                            <span class="author-block">
+                                                <a href="https://scholar.google.co.uk/citations?user=GHOQKCwAAAAJ&hl=en" target="_blank">Zilong Dong<sup>1</sup></a></span>
+                  </span>
+
+                  </div>
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block"><sup>1</sup>Institute of Intelligent Computing, Alibaba Group</span>
+                    <span class="author-block"><sup>2</sup>SSE, CUHKSZ</span>
+                    <span class="author-block"><sup>*</sup>Equal Contribution</span>
+                    <!-- <div class="is-size-5 publication-authors">
+                      <span class="author-block">Alibaba Group</span>
+                      <div class="is-size-5 publication-authors">
+                        <span class="author-block">Alibaba Group</span>
+                        <div class="is-size-5 publication-authors">
+                          <span class="author-block">Alibaba Group</span>
+                          <div class="is-size-5 publication-authors">
+                            <span class="author-block">Alibaba Group</span> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://github.com/aigc3d/Sparse3D/static/pdfs/paper.pdf" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- Video link -->
+                    <!-- <span class="link-block">
+                      <a href="" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                      </span>
+                      <span>video</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/hitsz-zuoqi/TexturedLAS" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://aigc3d.github.io/gobjaverse/" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>Dataset</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="static/videos/head.mp4"
+        type="video/mp4">
+      </video>
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            3D vision is inherently characterized by sparse spatial structures, which propels the necessity for an efficient paradigm tailored to 3D generation. Another discrepancy is the amount of training data, which undeniably affects generalization if we only use limited 3D data. To solve these, we design a 3D generation framework that maintains most of the building blocks of StableDiffusion with minimal adaptations for textured shape generation. We design a Sparse Encoding Module for details preservation and an Adversarial Decoding Module for better shape recovery. Moreover, we clean up data and build a benchmark on the biggest 3D dataset (Objaverse). We drop the concept of `specific class' and treat the 3D Textured Shapes Generation as an open-vocabulary problem.  We first validate our network design on ShapeNetV2 with 55K samples on single-class unconditional generation and multi-class conditional generation tasks. Then we report metrics on processed G-Objaverse with 200K samples on the image conditional generation task. Extensive experiments demonstrate our proposal outperforms SOTA methods and takes a further step towards open-vocabulary 3D generation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Method</h2>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/framework.png" alt="MY ALT TEXT"/>
+        <h2 class="content has-text-justified">
+            Sparse3D only varies with StableDiffusion in several specific components. In the input stage, a dense point cloud (with 1M to 4M points) is voxelized by a resolution of 1000^3, and then fed to a Sparse Convolutional Network to extract coordinate-based features. To align the huge amount of sparse features to a dense representation, we project multiple features onto specific pixel grids and compute the mean values of these features. After we translate 3D dense point clouds into 2D feature maps, we finetune the pre-trained StableDiffusion for 2D feature map generation. In the meanwhile, we decode the feature maps as explicit mesh through a differentiable mesh extraction layer (Flexicubes) and then optimize the variational autoencoder using a rendering-based reconstruction penalty. Since our output contains RGB renderings in a similar domain with natural images, we further use an N-layer discriminator for adversarial finetuning to enhance the texture quality after reconstruction converges.
+       </h2>
+     </div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Dataset Overview</h2>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/dataset.png" alt="MY ALT TEXT"/>
+          <h2 class="content has-text-justified">
+            We manually split Objaverse into 10 general classes as the color bands depict. Note we do not use the $Building\&\&Outdoor$ and $Poor Quality$ classes, since we empirically find that they are harmful to model convergence and we put further analysis in the appendix. By splitting Objaverse into general classes, we can build a benchmark on it, which we have achieved by shuffling class data and splitting it into certain proportions respectively for training, validation, and testing.
+         </h2>
+       </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Unconditional Results</h2>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/uncond.png" alt="MY ALT TEXT"/>
+          <h2 class="content has-text-justified">
+            Exported textured shapes of our single-class unconditional generation models. All models are exported using an UV unwrapper xatlas and rendered using Mitsuba.
+         </h2>
+       </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+
+<section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Conditional Results</h2>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/cond.png" alt="MY ALT TEXT"/>
+          <h2 class="content has-text-justified">
+            Qualitative conditional generation results on ShapeNetV2. For each conditioned image, the result of our method stands in the first line and the result of TexturedLAS stands in the second line. The last four columns show the shapes that are queried from 3DILG and 3DS2Vec using OpenShape.
+         </h2>
+       </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Open-Vocabulary Results</h2>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/open.png" alt="MY ALT TEXT"/>
+          <h2 class="content has-text-justified">
+            Qualitative results on various image-to-3D methods. Due to different settings, the image is treated as either a condition or the input.
+         </h2>
+       </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+
+  <section class="hero is-small">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3">Text-to-Image-to-3D Results</h2>
+        <div class="item">
+          <!-- Your image here -->
+          <img src="static/images/t2i23d.png" alt="MY ALT TEXT"/>
+          <h2 class="content has-text-justified">
+            Visualization of a text-image-3D pipeline utilizing off-the-shell SDXL.
+         </h2>
+       </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  </section>
+
+<!-- End image carousel -->
+
+
+
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+bulmaCarousel.attach('#results-carousel11', {
+    slidesToScroll: 1,
+    slidesToShow: 2,
+    infinite: true,
+    autoplay: false,
+});
+bulmaCarousel.attach('#results-carousel22', {
+    slidesToScroll: 1,
+    slidesToShow: 2,
+    infinite: true,
+    autoplay: false,
+});
+bulmaCarousel.attach('#results-carousel33', {
+    slidesToScroll: 1,
+    slidesToShow: 2,
+    infinite: true,
+    autoplay: false,
+});
+</script>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
